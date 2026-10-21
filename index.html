@@ -156,6 +156,63 @@ form input:focus{border-color:var(--oro2)}
 .gracias{text-align:center; padding:10px 0}
 .gracias p{line-height:1.6; margin-top:8px}
 
+
+/* ===== CRISTAL: vidrio esmerilado claro sobre luces de color ===== */
+.d-cristal{background:#0a1220}
+.d-cristal .fondo{background:radial-gradient(ellipse at 30% 10%,#1b2f4f 0%,#0a1220 65%)}
+.d-cristal .fondo i{opacity:.75}
+.d-cristal .fondo i:nth-child(1){background:#2f6fb0}
+.d-cristal .fondo i:nth-child(2){background:#7a4fb5}
+.d-cristal .fondo i:nth-child(3){background:#d4af61;opacity:.45}
+.d-cristal .tarjeta{
+  background:linear-gradient(150deg,rgba(255,255,255,.26),rgba(255,255,255,.08) 40%,rgba(255,255,255,.16));
+  -webkit-backdrop-filter:blur(26px) saturate(170%); backdrop-filter:blur(26px) saturate(170%);
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 2px 0 rgba(255,255,255,.6), inset 0 -2px 10px rgba(255,255,255,.12);
+}
+.d-cristal .tarjeta::before{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;
+  background:linear-gradient(170deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 28%)}
+.d-cristal .oro{background-image:linear-gradient(100deg,#dfe6ef 0%,#ffffff 32%,#fffdf4 40%,#ffffff 48%,#c9d3df 70%,#eef2f7 100%)}
+.d-cristal .lugar-ciudad,.d-cristal .ubic strong{color:#ffffff}
+.d-cristal .linea{background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent)}
+.d-cristal .cuenta div{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.12)}
+.d-cristal .cuenta b{color:#fff}
+.d-cristal .sub,.d-cristal .vest,.d-cristal .cuenta span{color:rgba(255,255,255,.82)}
+.d-cristal .boton{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.12)}
+.d-cristal .boton.principal{color:#0d1a2c;background:linear-gradient(100deg,#e9eef5,#ffffff 40%,#dfe6ef 60%,#cfd8e3);background-size:200% 100%}
+.d-cristal .brillo::after{width:55%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08) 30%,rgba(255,255,255,.55) 50%,rgba(255,255,255,.08) 70%,transparent)}
+.d-cristal .logo svg{filter:brightness(1.6) saturate(.2)}
+.d-cristal .hoja{background:rgba(20,32,52,.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-color:rgba(255,255,255,.3)}
+.d-cristal .hoja h2{color:#fff}
+.d-cristal .opcion .ico{background:rgba(255,255,255,.14);color:#fff}
+.d-cristal .elige input:checked + label{border-color:#fff;background:rgba(255,255,255,.16);color:#fff}
+
+/* ===== METAL: placa de acero negro cepillado con marco de oro grueso ===== */
+.d-metal{background:#050505}
+.d-metal .fondo{background:radial-gradient(ellipse at 50% 20%,#2a2418 0%,#050505 60%)}
+.d-metal .fondo i{display:none}
+.d-metal .tarjeta{
+  border-radius:6px; padding:46px 30px 34px;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,rgba(0,0,0,0) 1px 3px),
+    linear-gradient(180deg,#2b2b2e 0%,#141416 18%,#1c1c1f 50%,#0e0e10 82%,#26262a 100%);
+  box-shadow:0 0 0 2px #6e5420,0 0 0 5px #d4af61,0 0 0 7px #6e5420,0 0 0 9px #f7e7b4,0 0 0 11px #a8822f,0 40px 90px rgba(0,0,0,.85),inset 0 0 40px rgba(0,0,0,.8);
+  margin:12px 0;
+}
+.d-metal .tarjeta::before{display:none}
+.d-metal .marco{inset:14px;border:1px solid rgba(212,175,97,.55);border-radius:3px}
+.d-metal .marco::before,.d-metal .marco::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff7d6,#d4af61 45%,#6e5420);box-shadow:0 1px 2px rgba(0,0,0,.8);top:-5px;left:-5px}
+.d-metal .marco::after{left:auto;right:-5px}
+.d-metal .brillo{border-radius:6px}
+.d-metal .brillo::after{width:30%;background:linear-gradient(90deg,transparent,rgba(247,231,180,.06) 35%,rgba(255,240,200,.32) 50%,rgba(247,231,180,.06) 65%,transparent)}
+.d-metal .oro{text-shadow:none;filter:drop-shadow(0 2px 0 rgba(0,0,0,.9)) drop-shadow(0 -1px 0 rgba(255,240,200,.15))}
+.d-metal h1{font-weight:700}
+.d-metal .cuenta div{border-radius:3px;background:linear-gradient(180deg,#1f1f22,#0c0c0e);border:1px solid #a8822f;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.d-metal .boton{border-radius:4px;border-width:1.5px;background:linear-gradient(180deg,#232326,#0e0e10)}
+.d-metal .boton.principal{border-radius:4px;color:#1a140a}
+.d-metal .hoja{border-radius:8px 8px 0 0;background:linear-gradient(180deg,#1d1d20,#0f0f11);border:2px solid #a8822f;border-bottom:none}
+
 @media (max-width:360px){ .logo .letras{font-size:46px} .cuenta div{min-width:54px} }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important} .tarjeta{opacity:1; transform:none} }
 </style>
@@ -293,7 +350,7 @@ form input:focus{border-color:var(--oro2)}
 // Datos del evento
 const EVENTO = {
   titulo: 'Gran Inauguración · LUC Corporativo Jurídico',
-  inicio: '20261107T190000', fin: '20261107T230000', zona: 'America/Mexico_City',
+  inicio: '20261107T190000', zona: 'America/Mexico_City',
   lugar: 'Corporativo Cantera, Prolongación Vasco de Quiroga 1800, Santa Fe, Cuajimalpa, 05348 Ciudad de México. Segundo piso, Oficinas A y B',
   detalle: 'Inauguración del nuevo despacho de LUC Corporativo Jurídico. Vestimenta: formal / coctel.'
 };
@@ -306,7 +363,7 @@ if (d === 'metal' || d === 'cristal') document.body.className = 'd-' + d;
 
 document.getElementById('cal-google').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
   + '&text=' + encodeURIComponent(EVENTO.titulo)
-  + '&dates=' + EVENTO.inicio + '/' + EVENTO.fin
+  + '&dates=' + EVENTO.inicio + '/' + EVENTO.inicio
   + '&ctz=' + encodeURIComponent(EVENTO.zona)
   + '&location=' + encodeURIComponent(EVENTO.lugar)
   + '&details=' + encodeURIComponent(EVENTO.detalle);
