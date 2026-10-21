@@ -5,8 +5,8 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:inauguracion-luc-20261107@luc
-DTSTAMP:20261021T180000Z
-DTSTART:20261108T010000Z
+DTSTAMP:20261021T210000Z
+DTSTART:20261108T000000Z
 SUMMARY:Gran Inauguración · LUC Corporativo Jurídico
 LOCATION:Corporativo Cantera\, Prolongación Vasco de Quiroga 1800\, Santa Fe\, Cuajimalpa\, 05348 Ciudad de México. Segundo piso\, Oficinas A y B
 GEO:19.36695;-99.2638318

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gran Inauguración · LUC Corporativo Jurídico</title>
-<meta name="description" content="Sábado 7 de noviembre de 2026, 7:00 PM · Corporativo Cantera, Santa Fe, CDMX. Confirme su asistencia aquí.">
+<meta name="description" content="Sábado 7 de noviembre de 2026, 6:00 PM · Corporativo Cantera, Santa Fe, CDMX. Confirme su asistencia aquí.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LUC Corporativo Jurídico">
 <meta property="og:url" content="https://zacwebmx.github.io/luc/">
 <meta property="og:title" content="Gran Inauguración · LUC Corporativo Jurídico">
-<meta property="og:description" content="Sábado 7 de noviembre, 7:00 PM · Corporativo Cantera, Santa Fe, CDMX. Confirme su asistencia aquí.">
-<meta property="og:image" content="https://zacwebmx.github.io/luc/vista-previa.jpg">
+<meta property="og:description" content="Sábado 7 de noviembre, 6:00 PM · Corporativo Cantera, Santa Fe, CDMX. Confirme su asistencia aquí.">
+<meta property="og:image" content="https://zacwebmx.github.io/luc/vista-previa-6pm.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -227,7 +227,7 @@ form input:focus{border-color:var(--oro2)}
   <div class="linea"></div>
 
   <div class="fecha oro">SÁBADO 07 DE NOVIEMBRE, 2026</div>
-  <div class="hora oro">7:00 PM</div>
+  <div class="hora oro">6:00 PM</div>
 
   <div class="cuenta" id="cuenta" aria-label="Tiempo que falta">
     <div><b id="cd-d">--</b><span>días</span></div>
@@ -333,11 +333,11 @@ form input:focus{border-color:var(--oro2)}
 // Datos del evento
 const EVENTO = {
   titulo: 'Gran Inauguración · LUC Corporativo Jurídico',
-  inicio: '20261107T190000', zona: 'America/Mexico_City',
+  inicio: '20261107T180000', zona: 'America/Mexico_City',
   lugar: 'Corporativo Cantera, Prolongación Vasco de Quiroga 1800, Santa Fe, Cuajimalpa, 05348 Ciudad de México. Segundo piso, Oficinas A y B',
   detalle: 'Inauguración del nuevo despacho de LUC Corporativo Jurídico. Vestimenta: formal / coctel.'
 };
-const INICIO_MS = Date.parse('2026-11-07T19:00:00-06:00');
+const INICIO_MS = Date.parse('2026-11-07T18:00:00-06:00');
 const RSVP_URL = 'https://barrespiabogados.com/invitaciones/luc/rsvp.php';
 
 // Diseño: ?d=metal o ?d=cristal
@@ -394,7 +394,7 @@ form.addEventListener('submit', async e => {
     try { localStorage.setItem('luc-rsvp', '1'); } catch(e){}
     marcarConfirmado();
     document.getElementById('gracias-txt').textContent = form.asiste.value === 'si'
-      ? 'Su asistencia quedó confirmada. Le esperamos el sábado 7 de noviembre a las 7:00 PM.'
+      ? 'Su asistencia quedó confirmada. Le esperamos el sábado 7 de noviembre a las 6:00 PM.'
       : 'Recibimos su respuesta. Lamentamos que no pueda acompañarnos.';
     document.getElementById('rsvp-form-caja').hidden = true;
     document.getElementById('gracias').hidden = false;
