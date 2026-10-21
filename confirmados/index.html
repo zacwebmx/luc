@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b0b0d">
+<title>Confirmaciones · Inauguración LUC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--oro1:#f7e7b4;--oro2:#d4af61;--oro3:#a8822f;--oro4:#6e5420;--tinta:#0b0b0d;--texto:#efe9dc;--tenue:#b3ac9d;--linea:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--texto);font-family:Montserrat,system-ui,sans-serif;min-height:100vh;padding:28px 16px 48px;overflow-x:hidden}
+.fondo{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#1d1a14 0%,#0b0b0d 60%)}
+.fondo i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.45;animation:flota 20s ease-in-out infinite alternate}
+.fondo i:nth-child(1){width:380px;height:380px;background:#a8822f;top:-120px;left:-100px}
+.fondo i:nth-child(2){width:340px;height:340px;background:#3a4a63;bottom:-100px;right:-90px;animation-delay:-7s}
+@keyframes flota{to{transform:translate(50px,60px) scale(1.1)}}
+.c{max-width:900px;margin:0 auto}
+.vidrio{position:relative;overflow:hidden;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.03) 50%,rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 24px 70px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.28)}
+.vidrio.brilla::after{content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18) 50%,transparent);transform:rotate(22deg) translateX(-150%);animation:barre 6s 1s ease-in-out infinite}
+@keyframes barre{0%{transform:rotate(22deg) translateX(-150%)}45%,100%{transform:rotate(22deg) translateX(600%)}}
+.oro{background:linear-gradient(100deg,var(--oro3),var(--oro2) 25%,var(--oro1) 38%,#fffbe9 44%,var(--oro1) 50%,var(--oro2) 65%,var(--oro3));background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:reflejo 6s 1s ease-in-out infinite}
+@keyframes reflejo{0%{background-position:100% 0}45%,100%{background-position:-60% 0}}
+
+header.cab{padding:26px 24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.marca{font-family:Cinzel,serif;font-weight:700;font-size:40px;letter-spacing:3px;line-height:1}
+.cab h1{font-family:Cinzel,serif;font-weight:500;font-size:22px;letter-spacing:.5px}
+.cab p{color:var(--tenue);font-size:13.5px;margin-top:4px}
+.cab .acciones{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+.boton{border:1px solid var(--oro2);background:rgba(0,0,0,.3);color:var(--oro1);border-radius:999px;padding:10px 16px;font:600 12px Montserrat,sans-serif;
+  letter-spacing:.6px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap}
+.boton:hover{background:rgba(212,175,97,.12)}
+.boton svg{width:16px;height:16px}
+
+.cifras{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:14px;margin-top:16px}
+.cifra{padding:18px 18px 16px}
+.cifra b{display:block;font-family:Cinzel,serif;font-size:38px;line-height:1.1}
+.cifra span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tenue)}
+.cifra.grande{display:flex;align-items:center;gap:16px}
+.anillo{width:78px;height:78px;flex:none}
+.anillo circle{fill:none;stroke-width:7}
+.anillo .base{stroke:rgba(255,255,255,.1)}
+.anillo .va{stroke:url(#go);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
+
+.barra{display:flex;gap:10px;align-items:center;margin:22px 0 14px;flex-wrap:wrap}
+.pestanas{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--linea)}
+.pestanas button{border:none;background:none;color:var(--tenue);font:600 12.5px Montserrat,sans-serif;padding:9px 14px;border-radius:999px;cursor:pointer}
+.pestanas button.on{background:linear-gradient(100deg,var(--oro3),var(--oro1) 50%,var(--oro2));color:#1a140a}
+.buscar{flex:1;min-width:180px;position:relative}
+.buscar input{width:100%;padding:11px 14px 11px 38px;border-radius:999px;border:1px solid var(--linea);background:rgba(255,255,255,.05);color:var(--texto);font:400 15px Montserrat,sans-serif;outline:none}
+.buscar input:focus{border-color:var(--oro2)}
+.buscar svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--tenue)}
+
+.lista{display:grid;gap:10px}
+.inv{display:flex;align-items:center;gap:14px;padding:14px 16px;opacity:0;transform:translateY(10px);animation:entra .5s forwards}
+[hidden]{display:none!important}
+@keyframes entra{to{opacity:1;transform:none}}
+.ini{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;font:600 15px Montserrat,sans-serif;color:#1a140a;
+  background:linear-gradient(135deg,var(--oro1),var(--oro2) 55%,var(--oro3))}
+.inv.no .ini{background:rgba(255,255,255,.12);color:var(--tenue)}
+.dato{flex:1;min-width:0}
+.dato strong{display:block;font-weight:600;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dato small{color:var(--tenue);font-size:12.5px}
+.chip{font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:999px;white-space:nowrap}
+.chip.si{background:rgba(212,175,97,.16);color:var(--oro1);border:1px solid rgba(212,175,97,.4)}
+.chip.no{background:rgba(255,255,255,.06);color:var(--tenue);border:1px solid var(--linea)}
+.wa{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--linea);color:var(--oro1);flex:none}
+.wa:hover{border-color:var(--oro2)}
+.wa svg{width:18px;height:18px}
+.vacio{text-align:center;padding:40px 20px;color:var(--tenue)}
+.vacio b{display:block;font-family:Cinzel,serif;font-size:20px;color:var(--oro1);margin-bottom:6px;font-weight:500}
+.pie{text-align:center;color:var(--tenue);font-size:12px;margin-top:22px}
+
+@media (max-width:720px){
+  .cifras{grid-template-columns:repeat(3,1fr);gap:10px}
+  .cifra{padding:14px 12px}
+  .cifra b{font-size:28px}
+  .cifra span{font-size:9.5px;letter-spacing:.5px}
+  .cifra.grande{grid-column:1/-1}
+  .cab .acciones{margin-left:0;width:100%}
+  .marca{font-size:34px}
+}
+@media (max-width:420px){ .chip{display:none} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.inv{opacity:1;transform:none}}
+
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="fondo"><i></i><i></i></div>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="go" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e7b4"/><stop offset=".5" stop-color="#d4af61"/><stop offset="1" stop-color="#a8822f"/></linearGradient></defs></svg>
+
+<div class="c">
+  <header class="cab vidrio brilla">
+    <div class="marca oro">LUC</div>
+    <div>
+      <h1>Confirmaciones de asistencia</h1>
+      <p>Gran Inauguración · sábado 7 de noviembre de 2026, 7:00 PM</p>
+    </div>
+    <div class="acciones">
+      <button class="boton" type="button" id="excel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Descargar Excel</button>
+      <button class="boton" type="button" id="actualizar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg>Actualizar</button>
+    </div>
+  </header>
+
+  <section class="cifras">
+    <div class="cifra grande vidrio">
+      <svg class="anillo" viewBox="0 0 80 80"><circle class="base" cx="40" cy="40" r="33"/><circle class="va" id="anillo" cx="40" cy="40" r="33" stroke-dasharray="207.3" stroke-dashoffset="207.3"/></svg>
+      <div><b class="oro" id="n-personas">–</b><span>Personas confirmadas</span></div>
+    </div>
+    <div class="cifra vidrio"><b id="n-si">–</b><span>Sí van</span></div>
+    <div class="cifra vidrio"><b id="n-acomp">–</b><span>Acompañantes</span></div>
+    <div class="cifra vidrio"><b id="n-no">–</b><span>No van</span></div>
+  </section>
+
+  <div class="barra">
+    <div class="pestanas" role="tablist">
+      <button class="on" data-f="si">Asistirán (<span id="t-si">0</span>)</button>
+      <button data-f="no">No van (<span id="t-no">0</span>)</button>
+      <button data-f="todos">Todos (<span id="t-todos">0</span>)</button>
+    </div>
+    <label class="buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Buscar por nombre o teléfono">
+    </label>
+  </div>
+
+  <div class="lista" id="lista"></div>
+  <div class="vacio vidrio" id="vacio" hidden><b>Sin respuestas aquí</b>Cuando los invitados confirmen, aparecerán en esta lista.</div>
+  <div class="vacio vidrio" id="error" hidden><b>No se pudo abrir la lista</b><span id="error-txt"></span></div>
+
+  <p class="pie" id="pie"></p>
+</div>
+
+<script>
+const CLAVE = location.hash.slice(1);
+const DATOS = 'https://barrespiabogados.com/invitaciones/luc/datos.php?k=' + encodeURIComponent(CLAVE);
+const MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const WA_ICONO = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>';
+let lista = [], filtro = 'si';
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function fechaCorta(f){ const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}:\d{2})$/.exec(f || ''); return m ? (+m[3]) + ' ' + MESES[+m[2]-1] + ' · ' + m[4] : (f || ''); }
+function iniciales(n){ const p = String(n).trim().split(/\s+/); return (((p[0]||'')[0]||'') + ((p[1]||'')[0]||'')).toUpperCase(); }
+function wa(t){ const d = String(t||'').replace(/\D/g,''); return d ? 'https://wa.me/' + (d.length === 10 ? '52' + d : d) : ''; }
+
+function pintarTodo(){
+  const si = lista.filter(r => r.asiste === 'si'), no = lista.filter(r => r.asiste !== 'si');
+  const acomp = si.reduce((a, r) => a + (+r.acompanantes || 0), 0);
+  $('n-personas').textContent = si.length + acomp; $('n-si').textContent = si.length; $('n-acomp').textContent = acomp; $('n-no').textContent = no.length;
+  $('t-si').textContent = si.length; $('t-no').textContent = no.length; $('t-todos').textContent = lista.length;
+  requestAnimationFrame(() => { $('anillo').style.strokeDashoffset = 207.3 * (1 - (lista.length ? si.length / lista.length : 0)); });
+  $('lista').innerHTML = lista.slice().reverse().map((r, i) => {
+    const va = r.asiste === 'si', link = wa(r.telefono);
+    return `<div class="inv vidrio ${va ? 'si' : 'no'}" data-a="${va ? 'si' : 'no'}" data-t="${esc((r.nombre + ' ' + r.telefono).toLowerCase())}" style="animation-delay:${Math.min(i, 20) * 40}ms">
+      <div class="ini">${esc(iniciales(r.nombre))}</div>
+      <div class="dato"><strong>${esc(r.nombre)}</strong><small>${r.telefono ? esc(r.telefono) + ' · ' : ''}respondió el ${esc(fechaCorta(r.fecha))}</small></div>
+      <span class="chip ${va ? 'si' : 'no'}">${va ? (+r.acompanantes ? 'Va con 1 acompañante' : 'Va solo(a)') : 'No asistirá'}</span>
+      ${link ? `<a class="wa" href="${esc(link)}" target="_blank" rel="noopener" title="Escribirle por WhatsApp">${WA_ICONO}</a>` : ''}
+    </div>`;
+  }).join('');
+  const ultima = lista.length ? lista[lista.length - 1].fecha : '';
+  $('pie').textContent = (ultima ? 'Última respuesta: ' + fechaCorta(ultima) + ' · ' : '') + 'La lista se actualiza sola cada minuto.';
+  filtrar();
+}
+function filtrar(){
+  const t = $('q').value.trim().toLowerCase(); let n = 0;
+  document.querySelectorAll('.inv').forEach(el => { const ok = (filtro === 'todos' || el.dataset.a === filtro) && (!t || el.dataset.t.includes(t)); el.hidden = !ok; if (ok) n++; });
+  $('vacio').hidden = n > 0 || !$('error').hidden;
+}
+function mostrarError(t){ $('error-txt').textContent = t; $('error').hidden = false; $('vacio').hidden = true; }
+async function cargar(){
+  if (!CLAVE) { mostrarError('El enlace está incompleto. Ábralo tal como llegó en el correo.'); return; }
+  try {
+    const r = await fetch(DATOS, { cache: 'no-store' });
+    if (r.status === 404) { mostrarError('El enlace no es válido. Ábralo tal como llegó en el correo.'); return; }
+    const j = await r.json();
+    if (!j.ok) throw new Error();
+    $('error').hidden = true; lista = j.lista || []; pintarTodo();
+  } catch (e) { mostrarError('Revise su conexión a internet e intente de nuevo.'); }
+}
+
+document.querySelectorAll('.pestanas button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.pestanas button').forEach(x => x.classList.toggle('on', x === b));
+  filtro = b.dataset.f; filtrar();
+}));
+$('q').addEventListener('input', filtrar);
+$('actualizar').addEventListener('click', cargar);
+$('excel').addEventListener('click', () => {
+  const c = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const filas = [['Nombre','Teléfono','Asiste','Acompañante','Personas','Respondió']].concat(lista.map(r => {
+    const si = r.asiste === 'si';
+    return [r.nombre, r.telefono, si ? 'Sí' : 'No', si && +r.acompanantes ? 'Sí' : 'No', si ? 1 + (+r.acompanantes || 0) : 0, r.fecha];
+  }));
+  const csv = '﻿' + filas.map(f => f.map(c).join(',')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'Confirmaciones inauguracion LUC.csv'; a.click();
+});
+cargar();
+setInterval(() => { if (!$('q').value && document.visibilityState === 'visible') cargar(); }, 60000);
+</script>
+</body>
+</html>
