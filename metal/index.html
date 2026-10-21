@@ -33,6 +33,9 @@ body{
 @keyframes flota{to{transform:translate(40px,60px) scale(1.15)}}
 .d-metal .fondo i{opacity:.18}
 
+#fiesta{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#fiesta.encima{z-index:5}
+.tarjeta,.velo,.hoja{z-index:1}
 /* Tarjeta */
 .tarjeta{
   position:relative; width:100%; max-width:420px; border-radius:22px; overflow:hidden;
@@ -123,7 +126,7 @@ h1{font-family:Cinzel,serif; font-weight:500; font-size:clamp(26px,8.6vw,36px); 
 .confirmado{grid-column:1 / -1; font-size:13px; color:var(--oro1); display:none}
 
 /* Hojas que suben desde abajo */
-.velo{position:fixed; inset:0; background:rgba(0,0,0,.6); opacity:0; pointer-events:none; transition:opacity .25s; z-index:10}
+.velo{position:fixed; inset:0; z-index:10; background:rgba(0,0,0,.6); opacity:0; pointer-events:none; transition:opacity .25s; z-index:10}
 .velo.abierto{opacity:1; pointer-events:auto}
 .hoja{
   position:fixed; left:50%; bottom:0; width:100%; max-width:460px; z-index:11;
@@ -219,6 +222,7 @@ form input:focus{border-color:var(--oro2)}
 </head>
 <body class="d-metal">
 <div class="fondo"><i></i><i></i><i></i></div>
+<canvas id="fiesta" aria-hidden="true"></canvas>
 
 <main class="tarjeta" id="tarjeta">
   <div class="marco"></div>
@@ -419,6 +423,60 @@ form.addEventListener('submit', async e => {
     aviso.textContent = 'No se pudo enviar. Revise su conexión e intente de nuevo.';
   } finally { btn.disabled = false; }
 });
+
+// Confeti y burbujas alrededor de la tarjeta
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cv = document.getElementById('fiesta'), cx = cv.getContext('2d');
+  let W, H, dpr; const piezas = [], burbujas = [];
+  const colores = ['#0d0d0f','#1a1a1d','#d4af61','#f7e7b4','#a8822f','#ffffff','#e9eef5'];
+  function medir(){ dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W*dpr; cv.height = H*dpr; cx.setTransform(dpr,0,0,dpr,0,0); }
+  medir(); addEventListener('resize', medir);
+  const al = (a,b) => a + Math.random()*(b-a);
+  function pieza(x, y, vx, vy){
+    return {x, y, vx, vy, w: al(5,9), h: al(8,14), r: al(0,6.28), vr: al(-.15,.15), osc: al(0,6.28),
+            c: colores[Math.floor(Math.random()*colores.length)], negro: false};
+  }
+  // Estallido al abrir: dos chorros desde las esquinas de abajo, como al descorchar
+  // El estallido pasa por delante de la tarjeta; después el confeti vuelve a quedar detrás
+  setTimeout(() => {
+    cv.classList.add('encima'); setTimeout(() => cv.classList.remove('encima'), 3200);
+    for (let i = 0; i < 70; i++) {
+      const izq = i % 2 === 0;
+      piezas.push(pieza(izq ? -10 : W+10, H*.85, (izq?1:-1)*al(4,9), -al(9,16)));
+    }
+  }, 1300);
+  let ultima = 0;
+  function cuadro(t){
+    cx.clearRect(0,0,W,H);
+    // lluvia muy ligera
+    if (t - ultima > 650 && piezas.length < 90) { ultima = t; piezas.push(pieza(al(0,W), -15, al(-.3,.3), al(.6,1.2))); }
+    // burbujas de champaña por los lados
+    if (Math.random() < .06 && burbujas.length < 30) {
+      const lado = Math.random() < .5 ? al(4, W*.12) : al(W*.88, W-4);
+      burbujas.push({x: lado, y: H+10, r: al(1.2,3.2), v: al(.4,1.1), osc: al(0,6.28), a: al(.25,.6)});
+    }
+    for (let i = piezas.length-1; i >= 0; i--) {
+      const p = piezas[i];
+      p.vy = Math.min(p.vy + .22, 1.6 + p.w*.08); p.vx *= .985; p.osc += .05;
+      p.x += p.vx + Math.sin(p.osc)*.5; p.y += p.vy; p.r += p.vr;
+      if (p.y > H+20) { piezas.splice(i,1); continue; }
+      cx.save(); cx.translate(p.x,p.y); cx.rotate(p.r); cx.scale(1, Math.cos(p.osc*2));
+      cx.fillStyle = p.c; cx.globalAlpha = .85; cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      if (p.c.startsWith('#0') || p.c.startsWith('#1')) { cx.strokeStyle = 'rgba(212,175,97,.55)'; cx.lineWidth = .8; cx.strokeRect(-p.w/2,-p.h/2,p.w,p.h); }
+      cx.restore();
+    }
+    for (let i = burbujas.length-1; i >= 0; i--) {
+      const b = burbujas[i]; b.y -= b.v; b.osc += .04; b.x += Math.sin(b.osc)*.3;
+      if (b.y < -10) { burbujas.splice(i,1); continue; }
+      cx.beginPath(); cx.arc(b.x,b.y,b.r,0,6.283);
+      cx.strokeStyle = `rgba(247,231,180,${b.a})`; cx.lineWidth = .9; cx.stroke();
+      cx.fillStyle = `rgba(255,255,255,${b.a*.25})`; cx.fill();
+    }
+    requestAnimationFrame(cuadro);
+  }
+  requestAnimationFrame(cuadro);
+})();
 </script>
 </body>
 </html>
