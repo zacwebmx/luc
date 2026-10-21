@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LUC Corporativo Juridico//Inauguracion//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:inauguracion-luc-20261107@luc
+DTSTAMP:20261021T180000Z
+DTSTART:20261108T010000Z
+DTEND:20261108T050000Z
+SUMMARY:Gran Inauguración · LUC Corporativo Jurídico
+LOCATION:Corporativo Cantera\, Prolongación Vasco de Quiroga 1800\, Santa Fe\, Cuajimalpa\, 05348 Ciudad de México. Segundo piso\, Oficinas A y B
+GEO:19.36695;-99.2638318
+DESCRIPTION:Inauguración del nuevo despacho de LUC Corporativo Jurídico. Vestimenta: formal / coctel.
+Cómo llegar: https://maps.app.goo.gl/p9SuM4WqJhHVLQk48
+URL:https://maps.app.goo.gl/p9SuM4WqJhHVLQk48
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mañana: inauguración de LUC Corporativo Jurídico
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Inauguración de LUC en 2 horas
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
